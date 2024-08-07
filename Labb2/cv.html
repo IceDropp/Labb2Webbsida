@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Morgan Westin</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Hem</a></li>
+                <li><a href="om.html">Om mig</a></li>
+                <li class="active"><a href="cv.html">CV</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Curriculum Vitae</h1>
+        <div id="cv-content" onclick="changeBackgroundColor()">
+            <!-- CV content will be dynamically loaded here -->
+        </div>
+    </main>
+    <footer id="easter-egg">
+        <p>&copy; 2024 Morgan Westin</p>
+    </footer>
+
+    <!-- Modal Popup -->
+    <div id="easter-egg-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Grattis!</h2>
+            <p>Du har hittat påskägget!</p>
+        </div>
+    </div>
+
+    <script>
+        // Load the JSON data
+        fetch('data.json')
+            .then(response => response.json())
+            .then(data => {
+                const cvContent = document.getElementById('cv-content');
+                
+                // Personal Information
+                const personalInfo = `
+                    <h2>${data.name}</h2>
+                    <p>${data.address.street}</p>
+                    <p>${data.address.postalCode} ${data.address.city}</p>
+                    <p>Telefon: ${data.phone}</p>
+                    <p>E-post: ${data.email}</p>
+                `;
+                cvContent.innerHTML += personalInfo;
+
+                // Work Experience
+                const workExperience = data.cv.workExperience.map(job => `
+                    <div>
+                        <h3>${job.position} - ${job.company}</h3>
+                        <p>${job.startDate} - ${job.endDate || 'Nuvarande'}</p>
+                        <p>${job.description}</p>
+                    </div>
+                `).join('');
+                cvContent.innerHTML += `<h2>Arbetslivserfarenhet</h2>${workExperience}`;
+
+                // Education
+                const education = data.cv.education.map(edu => `
+                    <div>
+                        <h3>${edu.institution}</h3>
+                        <p>${edu.program || ''}</p>
+                        <p>${edu.startDate} - ${edu.endDate || 'Nuvarande'}</p>
+                    </div>
+                `).join('');
+                cvContent.innerHTML += `<h2>Utbildning</h2>${education}`;
+
+                // Additional Info
+                const additionalInfo = `
+                    <div>
+                        <h2>Övrigt</h2>
+                        <p>Språk: ${data.cv.additionalInfo.languages.map(lang => `${lang.language} (${lang.proficiency})`).join(', ')}</p>
+                        <p>Körkort: ${data.cv.additionalInfo.drivingLicense}</p>
+                        <p>Datoranvändare: ${data.cv.additionalInfo.computerSkills}</p>
+                    </div>
+                `;
+                cvContent.innerHTML += additionalInfo;
+
+                // Programming Languages
+                const programmingLanguages = `
+                    <div>
+                        <h2>Programspråk</h2>
+                        <p>${data.cv.programmingLanguages.join(', ')}</p>
+                    </div>
+                `;
+                cvContent.innerHTML += programmingLanguages;
+
+                // Activities
+                const activities = data.cv.activities.map(activity => `
+                    <div>
+                        <p>${activity.role} - ${activity.organization}</p>
+                        <p>${activity.startDate || ''} - ${activity.endDate || ''}</p>
+                    </div>
+                `).join('');
+                cvContent.innerHTML += `<h2>Föreningsverksamhet</h2>${activities}`;
+
+                // References
+                const references = `
+                    <div>
+                        <h2>Referenser</h2>
+                        <p>${data.cv.references}</p>
+                    </div>
+                `;
+                cvContent.innerHTML += references;
+            })
+            .catch(error => console.error('Error loading JSON:', error));
+
+        // Function to change background color
+        function changeBackgroundColor() {
+            const colors = ['#FFDDC1', '#FFABAB', '#FFC3A0', '#FF677D', '#D4A5A5'];
+            const cvContent = document.getElementById('cv-content');
+            cvContent.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        // Easter egg - Show modal on key sequence
+        let inputSequence = '';
+        const secretCode = '1337';
+
+        document.addEventListener('keydown', (event) => {
+            inputSequence += event.key;
+
+            if (inputSequence.endsWith(secretCode)) {
+                document.getElementById('easter-egg-modal').style.display = 'flex';
+                inputSequence = ''; // Reset input sequence
+            }
+
+            // Limit the length of the input sequence to avoid overflow
+            if (inputSequence.length > secretCode.length) {
+                inputSequence = inputSequence.slice(-secretCode.length);
+            }
+        });
+
+        // Close the modal
+        function closeModal() {
+            document.getElementById('easter-egg-modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

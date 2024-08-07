@@ -1,0 +1,135 @@
+{
+    "name": "Morgan Westin",
+    "address": {
+      "street": "Betsövägen 10, 1 tr",
+      "postalCode": "132 30",
+      "city": "SALTSJÖ BOO"
+    },
+    "phone": "070 497 75 27",
+    "email": "moggewestin@google.com",
+    "cv": {
+      "title": "CURRICULUM VITAE",
+      "workExperience": [
+        {
+          "position": "Butiksbiträde",
+          "company": "Systembolaget",
+          "startDate": "Juni 2014",
+          "endDate": "Augusti 2016",
+          "description": "Plockade varor, frontade i butiken. Allmänt lagerarbete tog emot varor."
+        },
+        {
+          "position": "Mötes handläggare",
+          "company": "JKRS Telemarketing",
+          "startDate": "Mars 2014",
+          "endDate": null,
+          "description": "Rinde upp chefer och privatpersoner för att boka in möten."
+        },
+        {
+          "position": "Butiksbiträde",
+          "company": "Willys",
+          "startDate": "Mars 2013",
+          "endDate": "Augusti 2013",
+          "description": "Plockade varor, frontade i butiken. Allmänt butiksarbete."
+        },
+        {
+          "position": "Butiksbiträde",
+          "company": "Hemköp",
+          "startDate": "Mars 2012",
+          "endDate": "November 2012",
+          "description": "Plockade varor, frontade i butiken. Jobbade mycket i charken. På sommaren så fick jag sköta charken själv."
+        },
+        {
+          "position": "Snickare",
+          "company": "Nacka Kommun",
+          "startDate": "Juni 2011",
+          "endDate": "Januari 2012",
+          "description": "Tillverkning av produkter till kommunen, blomlådor, fågelholkar, skärbrädor, CD-ställ samt hyllor."
+        }
+      ],
+      "education": [
+        {
+          "institution": "Edugrade",
+          "program": "Systemutvecklare C# .NET, YH.Utbildning",
+          "startDate": "2024",
+          "endDate": "Pågående"
+        },
+        {
+          "institution": "KTH",
+          "program": "Byggnadsteknik",
+          "startDate": "2018",
+          "endDate": "Pågående"
+        },
+        {
+          "institution": "KTH",
+          "program": "Datateknik",
+          "startDate": "2016",
+          "endDate": null
+        },
+        {
+          "institution": "Nackademin",
+          "program": "Järnvägsteknik",
+          "startDate": "2008",
+          "endDate": "2010"
+        },
+        {
+          "institution": "KTH",
+          "program": "Byggnadsteknik",
+          "startDate": "2007",
+          "endDate": null
+        },
+        {
+          "institution": "Nacka Gymnasium",
+          "program": null,
+          "startDate": "2004",
+          "endDate": null
+        }
+      ],
+      "additionalInfo": {
+        "languages": [
+          {
+            "language": "Engelska",
+            "proficiency": "mycket god i tal och skrift"
+          }
+        ],
+        "drivingLicense": "B",
+        "computerSkills": "God datoranvändare"
+      },
+      "programmingLanguages": [
+        "C",
+        "C#",
+        "C++",
+        "Java",
+        "SQL Server Manegment",
+        "Assembler",
+        "VHDL"
+      ],
+      "activities": [
+        {
+          "role": "Representant",
+          "organization": "THS kårfullmäktige",
+          "startDate": "2017",
+          "endDate": "2020"
+        },
+        {
+          "role": "Fadder",
+          "organization": "Mottagningen i skolan",
+          "startDate": 2016,
+          "endDate": 2016
+        },
+        {
+          "role": "ViceOrdförande",
+          "organization": "Ingenjörsektionen Bygg",
+          "startDate": 2018,
+          "endDate": 2019
+        },
+        {
+          "role": "Revisor",
+          "organization": "Ingenjörsektionen Flemingsberg",
+          "startDate": 2016,
+          "endDate": 2017
+        }
+      ],
+      "references": "Lämnas på begäran"
+    }
+  }
+  
